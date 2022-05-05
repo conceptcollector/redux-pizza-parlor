@@ -12,13 +12,15 @@ function App() {
         <header className='App-header'>
           <h1 className='App-title'>Prime Pizza</h1>
         </header>
-    
-        <img src='images/pizza_photo.png' />
-        <p>Pizza is great.</p>
-          <Link to="/CustomerForm">Customer Form</Link>
-            <Route exact path="/CustomerForm">
-              <CustomerForm />
-            </Route>
+        <Link to="/">Home</Link>
+        <Link to="/CustomerForm">Customer Form</Link>
+          <Route exact path="/">
+              <img src='images/pizza_photo.png' />
+              <p>Pizza is great.</p>
+          </Route>
+          <Route exact path="/CustomerForm">
+              <CustomerForm getPizzas = {getPizzas}/>
+          </Route>
       </div>
     </Router>
   );
