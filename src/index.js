@@ -15,7 +15,12 @@ const pizzaReducer = (state=[], action) => {
     return state;
 }
 
-
+const priceReducer = (state = 0, action) => {
+  if (action.type === 'SET_PRICE'){
+    state += action.payload;
+  }
+  return state;
+}
 
 
 
@@ -23,7 +28,8 @@ const pizzaReducer = (state=[], action) => {
 
 const storeInstance = createStore(
     combineReducers({
-      pizzaReducer
+      pizzaReducer,
+      priceReducer
     }),
     applyMiddleware(logger),
   );
