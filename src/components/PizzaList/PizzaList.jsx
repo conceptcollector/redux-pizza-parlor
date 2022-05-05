@@ -1,9 +1,12 @@
 import React from 'react';
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import PizzaItem from '../PizzaItem/PizzaItem'
 
 function PizzaList({ getPizzas }) {
+    const dispatch = useDispatch();
+    
     const pizzaList = useSelector(store => store.pizzaReducer);
+    const pizzaPrice = useSelector(store => store.priceReducer);
 
   return (
     <ul>
