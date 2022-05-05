@@ -3,18 +3,22 @@ import axios from 'axios';
 
 function CustomerForm({getPizzas}) {
 
-    const [name, setName] = useState('');
-    const [address, setAddress] = useState('');
+    const [customer_name, setCustomerName] = useState('');
+    const [street_address, setStreetAddress] = useState('');
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
+    let type = 'delivery';
+    let total = 0;
+    let pizzas = [];
+
 
     const handleInformationSubmission = event => {
         event.preventDefault();
-        console.log({name, address, city, zip})
+        console.log({customer_name, street_address, city, zip})
         axios({
             method: 'POST',
             url: '/api/order',
-            data: {name, address, city, zip}
+            data: {customer_name, street_address, city, zip, type, total, pizzas}
         }).then((response) => {
             console.log('this is the response of the post route in customer form', response)
             getPizzas(); //will recieve on merge
@@ -30,14 +34,14 @@ function CustomerForm({getPizzas}) {
                 <input
                     required
                     placeholder="Name"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
+                    value={customer_name}
+                    onChange={(event) => setCustomerName(event.target.value)}
                 />
                 <input
                     required
                     placeholder="Street Address"
-                    value={address}
-                    onChange={(event) => setAddress(event.target.value)}
+                    value={street_address}
+                    onChange={(event) => setStreetAddress(event.target.value)}
                 />
                 <input
                     required
