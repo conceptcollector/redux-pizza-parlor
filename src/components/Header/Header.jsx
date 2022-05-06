@@ -8,7 +8,7 @@ function Header() {
     return (
         <header className='App-header'>
             <h1 className='App-title'>Prime Pizza</h1>
-            <span id="shopping-cart">🛒: {totalPrice}</span>
+            <div id="shopping-cart" className="two">🛒: {totalPrice}</div>
         </header>
     )
 }

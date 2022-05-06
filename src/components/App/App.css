@@ -1,19 +1,25 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
   background-color: red;
   padding: 20px;
   color: white ;
   font-family: Garamond, serif;
   margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
 }
 
 .App-title {
   font-size: 2em;
-  display: inline-block;
-  text-align: center;
+}
+
+#shopping-cart {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.two {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 li {
