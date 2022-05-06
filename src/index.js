@@ -17,7 +17,7 @@ const pizzaReducer = (state=[], action) => {
 
 const priceReducer = (state = 0, action) => {
   if (action.type === 'SET_PRICE'){
-    state += Number(action.payload);
+   return( state += Number(action.payload))
   }
   return state;
 }

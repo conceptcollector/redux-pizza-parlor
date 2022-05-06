@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import Header from '../Header/Header.jsx'
+import { useHistory } from 'react-router-dom'; 
 
 import CustomerForm from '../CustomerForm/CustomerForm';
 
@@ -17,6 +18,12 @@ import Checkout from '../Checkout/Checkout'
 function App() {
   const dispatch = useDispatch();
 
+  const history = useHistory();
+
+  const handleNext = () => {
+    console.log(history)
+    history.push('/CustomerForm');
+  }
 
   useEffect(() => {
     console.log('in useEffect');
@@ -61,7 +68,12 @@ function App() {
             <Checkout/>
           </Route>
 
-
+          <footer>
+          <Link to="/CustomerForm">   
+             <button>NEXT</button>
+          </Link>
+    
+          </footer>
       
       </div>
     </Router>
