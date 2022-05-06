@@ -7,24 +7,30 @@ function CustomerForm({getPizzas}) {
     const [street_address, setStreetAddress] = useState('');
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
-    let type = 'delivery';
     let total = 0;
     let pizzas = [];
+    const [type, setType] = useState('');
 
 
     const handleInformationSubmission = event => {
         event.preventDefault();
-        console.log({customer_name, street_address, city, zip})
+        console.log({customer_name, street_address, city, zip, type, total, pizzas})
         axios({
             method: 'POST',
             url: '/api/order',
             data: {customer_name, street_address, city, zip, type, total, pizzas}
         }).then((response) => {
             console.log('this is the response of the post route in customer form', response)
+            
             getPizzas(); //will recieve on merge
         }).catch((err) => {
             console.log('oops', err)
         })
+    }
+
+    const onChangeValue = event => {
+        console.log('button thing works', event.target.value);
+        setType(event.target.value) 
     }
 
     return (
@@ -59,6 +65,10 @@ function CustomerForm({getPizzas}) {
                 <button type="submit">
                     Next
                 </button>
+                <div onChange={onChangeValue}>
+                    <input type="radio" value="Takeout" name="howToGetPizza" /> Takeout
+                    <input type="radio" value="Delivery" name="howToGetPizza" /> Delivery
+                </div>
             </form>
         </section>
     )
