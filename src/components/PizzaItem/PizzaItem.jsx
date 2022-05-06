@@ -1,7 +1,15 @@
+import {useDispatch} from 'react-redux';
+
 function PizzaItem({pizza}){
 
+    const dispatch = useDispatch();
+
     const handleClick = () => {
-        console.log('I will add pizza to the checkout!');
+        console.log('I will add pizza to the checkout!', pizza.price);
+        dispatch({
+            type: 'SET_PRICE',
+            payload: pizza.price
+        })
     }
 
     return(
