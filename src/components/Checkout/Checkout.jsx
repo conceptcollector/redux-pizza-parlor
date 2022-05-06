@@ -18,10 +18,11 @@ function Checkout() {
             <tbody>
                 {pizzaCart.map((pizzaOrdered) => {
                     console.log(pizzaOrdered);
-                    <tr>
+                    return(
+                    <tr key={pizzaOrdered.id}>
                         <td>{pizzaOrdered.name}</td>
                         <td>{pizzaOrdered.price}</td>
-                    </tr>
+                    </tr>)
                 })}
             </tbody>
         </table>

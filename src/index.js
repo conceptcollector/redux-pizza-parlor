@@ -24,7 +24,9 @@ const priceReducer = (state = 0, action) => {
 
 
 const checkoutReducer = (state = [], action) => {
+
   if(action.type==='ADD_TO_CART'){
+    console.log('its working?',action.payload)
       return [...state,action.payload]
   }
   return state;
