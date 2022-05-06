@@ -23,13 +23,21 @@ const priceReducer = (state = 0, action) => {
 }
 
 
+const checkoutReducer = (state = [], action) => {
+  if(action.type==='ADD_TO_CART'){
+      return [...state,action.payload]
+  }
+  return state;
+};
+
 
 
 
 const storeInstance = createStore(
     combineReducers({
       pizzaReducer,
-      priceReducer
+      priceReducer,
+      checkoutReducer
     }),
     applyMiddleware(logger),
   );

@@ -1,7 +1,12 @@
 function PizzaItem({pizza}){
 
     const handleClick = () => {
-        console.log('I will add pizza to the checkout!');
+        console.log('I will add pizza to the checkout!',pizza);
+
+        dispatch({
+            type:'ADD_TO_CART',
+            payload: pizza
+          })
     }
 
     return(

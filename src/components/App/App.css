@@ -3,21 +3,28 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: red;
   padding: 20px;
-  color: white;
+  color: white ;
+  font-family: Garamond, serif;
   margin-bottom: 20px;
 }
 
 .App-title {
   font-size: 2em;
   display: inline-block;
+  text-align: center;
 }
 
 #shopping-cart {
   margin-left: 95%;
+  text-align: center;
 }
 
 li {
   list-style: none;
+  font-family: Garamond, serif;
+  text-align: center;
+
+
 }
