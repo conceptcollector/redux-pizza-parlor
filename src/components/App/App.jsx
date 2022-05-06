@@ -49,7 +49,6 @@ function App() {
         <Link to="/CustomerForm">Customer Form</Link>
         </nav>
           <Route exact path="/">
-              <img src='images/pizza_photo.png' />
               <p>Pizza is great.</p>
               <PizzaList getPizzas={getPizzas} />
           </Route>

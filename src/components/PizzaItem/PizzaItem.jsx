@@ -7,7 +7,7 @@ function PizzaItem({pizza}){
     return(
         <div>
             <ul>
-                <li>{pizza.image}</li>
+                <img src ={pizza.image_path} ></img>
                 <li>{pizza.name}</li>
                 <li>{pizza.description}</li>
                 <li>{pizza.price}</li>
