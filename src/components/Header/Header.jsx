@@ -4,7 +4,7 @@ function Header() {
     return (
         <header className='App-header'>
             <h1 className='App-title'>Prime Pizza</h1>
-            <span id="shopping-cart">🛒</span>
+            <div id="shopping-cart" className="two">🛒</div>
         </header>
     )
 }
