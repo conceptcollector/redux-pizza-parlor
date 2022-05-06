@@ -5,11 +5,20 @@ function PizzaItem({pizza}){
     const dispatch = useDispatch();
 
     const handleClick = () => {
+
+        console.log('I will add pizza to the checkout!',pizza);
+
+        dispatch({
+            type:'ADD_TO_CART',
+            payload: pizza
+          })
+
         console.log('I will add pizza to the checkout!', pizza.price);
         dispatch({
             type: 'SET_PRICE',
             payload: pizza.price
         })
+
     }
 
     return(
