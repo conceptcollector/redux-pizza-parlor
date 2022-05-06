@@ -9,6 +9,7 @@ import CustomerForm from '../CustomerForm/CustomerForm';
 import  { useState, useEffect } from 'react';
 import {useDispatch} from 'react-redux';
 import PizzaList from '../PizzaList/PizzaList'
+import Checkout from '../Checkout/Checkout'
 
 
 
@@ -47,6 +48,7 @@ function App() {
         <nav>
         <Link to="/">Home</Link>
         <Link to="/CustomerForm">Customer Form</Link>
+        <Link to="/Checkout">Checkout</Link>
         </nav>
           <Route exact path="/">
               <p>Pizza is great.</p>
@@ -54,6 +56,9 @@ function App() {
           </Route>
           <Route exact path="/CustomerForm">
               <CustomerForm getPizzas = {getPizzas}/>
+          </Route>
+          <Route exact path="/Checkout">
+            <Checkout/>
           </Route>
 
 
